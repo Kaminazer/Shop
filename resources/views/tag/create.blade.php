@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Додати категорію</h1>
+                    <h1 class="m-0">Додати тег</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -26,12 +26,12 @@
                 <div class="col-md-6">
                     <!-- general form elements -->
                     <div class="card card-primary">
-                        <form action="{{route("category.store")}}" method="post">
+                        <form action="{{route("tag.store")}}" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="title">Назва</label>
-                                    <input type="text" class="form-control" name="title" id="title" placeholder="Введіть назву категорії">
+                                    <input type="text" class="form-control" name="title" id="title" placeholder="Введіть назву тега">
                                 </div>
                             </div>
                             <!-- /.card-body -->

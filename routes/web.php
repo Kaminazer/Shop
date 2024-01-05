@@ -17,4 +17,5 @@ Route::get('/', function () {
     return view('main.index');
 });
 Route::get('/admin', [\App\Http\Controllers\Main\IndexController::class, 'index'])->name('main.index');
-Route::resource('category',\App\Http\Controllers\Category::class);
+Route::resource('category',\App\Http\Controllers\CategoryController::class);
+Route::resource('tag',\App\Http\Controllers\TagController::class);
