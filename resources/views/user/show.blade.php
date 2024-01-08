@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Детальніше про тег</h1>
+                    <h1 class="m-0">Детальніше про категорію</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -27,9 +27,9 @@
                     <div class="card">
                         <div class="card-header d-flex">
                             <div class="mr-3">
-                                <a href="{{route('tag.edit', $tag->id)}}" class="btn btn-primary">Редагувати</a>
+                                <a href="{{route('user.edit', $user->id)}}" class="btn btn-primary">Редагувати</a>
                             </div>
-                            <form action="{{route('tag.destroy', $tag->id)}}" method="post">
+                            <form action="{{route('user.destroy', $user->id)}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <input type="submit" class="btn btn-danger" value="Видалити">
@@ -42,11 +42,28 @@
                                 <tbody>
                                     <tr>
                                         <td> ID</td>
-                                        <td> {{$tag->id}}</td>
+                                        <td> {{$user->id}}</td>
                                     </tr>
                                     <tr>
-                                        <td> Назва</td>
-                                        <td> {{$tag->title}}</td>
+                                        <td> Прізвище</td>
+                                        <td> {{$user->last_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Ім'я</td>
+                                        <td> {{$user->name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Email</td>
+                                        <td> {{$user->email}}</td>
+                                    </tr>          <tr>
+                                        <td> Вік</td>
+                                        <td> {{$user->age}}</td>
+                                    </tr>          <tr>
+                                        <td> Стать</td>
+                                        <td> {{$user->genderTitle}}</td>
+                                    </tr>          <tr>
+                                        <td> Адреса</td>
+                                        <td> {{$user->address}}</td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use function Laravel\Prompts\search;
 
 class User extends Authenticatable
 {
@@ -17,11 +18,25 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
+    const GENDER_MALE = 0;
+    const GENDER_FEMALE = 1;
+    static function getGender():array
+    {
+        return [
+            self::GENDER_MALE => 'Чоловік',
+            self::GENDER_FEMALE => 'Жінка',
+        ];
+    }
+    public function getGenderTitleAttribute():string
+    {
+        return self::getGender()[$this->gender];
+    }
+    protected $guarded   = false;
+/*    protected $fillable = [
         'name',
         'email',
         'password',
-    ];
+    ];*/
 
     /**
      * The attributes that should be hidden for serialization.

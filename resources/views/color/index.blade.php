@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Теги</h1>
+                    <h1 class="m-0">Кольори</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -26,7 +26,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="{{route('tag.create')}}" class="btn btn-primary">Створити новий тег</a>
+                            <a href="{{route('color.create')}}" class="btn btn-primary">Створити новий колір</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
@@ -34,14 +34,14 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Назва</th>
+                                    <th>Колір</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($tags as $tag)
+                                @foreach($colors as $color)
                                 <tr>
-                                    <td>{{$tag->id}}</td>
-                                    <td><a href="{{route('tag.show', $tag->id)}}">{{$tag->title}}</a></td>
+                                    <td>{{$color->id}}</td>
+                                    <td><a href="{{route('color.show', $color->id)}}"><div style="width: 16px; height: 16px; background: {{'#'.$color->value}};"></div></a></td>
                                 </tr>
                                 @endforeach
                                 </tbody>

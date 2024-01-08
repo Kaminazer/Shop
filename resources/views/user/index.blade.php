@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Теги</h1>
+                    <h1 class="m-0">Користувачі</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -26,7 +26,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="{{route('tag.create')}}" class="btn btn-primary">Створити новий тег</a>
+                            <a href="{{route('user.create')}}" class="btn btn-primary">Додати нового користувача</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
@@ -34,14 +34,25 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Назва</th>
+                                    <th>Ім'я</th>
+                                    <th>Прізвище</th>
+                                    <th>Email</th>
+                                    <th>Вік</th>
+                                    <th>Стать</th>
+                                    <th>Адреса</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($tags as $tag)
+                                @foreach($users as $user)
                                 <tr>
-                                    <td>{{$tag->id}}</td>
-                                    <td><a href="{{route('tag.show', $tag->id)}}">{{$tag->title}}</a></td>
+                                    <td>{{$user->id}}</td>
+                                    <td><a href="{{route('user.show', $user->id)}}">{{$user->name}}</a></td>
+                                    <td>{{$user->last_name}}</td>
+                                    <td>{{$user->email}}</td>
+                                    <td>{{$user->age}}</td>
+                                    <td>{{$user->genderTitle}}</td>
+                                    <td>{{$user->address}}</td>
+
                                 </tr>
                                 @endforeach
                                 </tbody>

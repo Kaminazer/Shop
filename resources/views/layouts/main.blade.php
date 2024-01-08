@@ -162,14 +162,14 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{route('color.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-palette"></i>
                             <p> Кольори </p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{route('user.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
                             <p> Користувачі </p>
                         </a>
