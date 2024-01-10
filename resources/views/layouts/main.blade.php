@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('adminLTE/plugins/fontawesome-free/css/all.min.css')}}">
-
+    <link rel="stylesheet" href="{{asset('adminLTE/plugins/select2/css/select2.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('adminLTE/dist/css/adminlte.min.css')}}">
     <!-- overlayScrollbars -->
@@ -141,7 +141,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{route('product.index')}}" class="nav-link">
                             <i class="nav-icon far fa-clipboard"></i>
                             <p> Товари </p>
                         </a>
@@ -208,9 +208,17 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('adminLTE/plugins/select2/js/select2.full.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{asset('adminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('adminLTE/dist/js/adminlte.js')}}"></script>
+<script>
+    $(function () {
+        //Initialize Select2 Elements
+        $('.tags').select2()
+        $('.colors').select2()
+    })
+</script>
 </body>
 </html>
